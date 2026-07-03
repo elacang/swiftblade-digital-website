@@ -41,7 +41,9 @@ const SERVICES = [
 export default function Services() {
   return (
     <section id="services" className="relative px-6 py-32">
-      <div className="slash-divider mx-auto max-w-7xl" />
+      <div className="slash-divider mx-auto max-w-7xl">
+        <span className="slash-sweep" data-slash-sweep />
+      </div>
       <div className="mx-auto max-w-7xl pt-24">
         <div className="mb-16 max-w-2xl">
           <p className="label-mono mb-6 reveal">// サービス — services</p>
@@ -55,7 +57,7 @@ export default function Services() {
           {SERVICES.map((s) => (
             <div
               key={s.title}
-              className={`reveal group relative overflow-hidden bg-background p-10 transition-colors duration-300 hover:bg-surface ${
+              className={`reveal group relative cursor-pointer overflow-hidden bg-background p-10 transition-colors duration-300 hover:bg-surface ${
                 s.featured ? "bg-surface" : ""
               }`}
             >

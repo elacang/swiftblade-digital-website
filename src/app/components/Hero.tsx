@@ -38,13 +38,13 @@ export default function Hero() {
         <div className="reveal mt-12 flex flex-col items-center justify-center gap-4 sm:flex-row">
           <a
             href="#contact"
-            className="btn-blade rounded-full px-8 py-3.5 text-base font-semibold"
+            className="btn-blade cursor-pointer rounded-full px-8 py-3.5 text-base font-semibold"
           >
             Book a consulting call
           </a>
           <a
             href="#services"
-            className="btn-ghost rounded-full px-8 py-3.5 text-base font-medium"
+            className="btn-ghost cursor-pointer rounded-full px-8 py-3.5 text-base font-medium"
           >
             Start a SaaS trial →
           </a>

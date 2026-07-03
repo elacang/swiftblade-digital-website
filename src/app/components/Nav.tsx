@@ -58,7 +58,7 @@ export default function Nav() {
       >
         <a
           href="#top"
-          className="flex items-center gap-2"
+          className="flex cursor-pointer items-center gap-2"
         >
           <span className="text-mist font-mono text-sm tracking-[0.3em] uppercase">
             刀 Swiftblade
@@ -70,7 +70,7 @@ export default function Nav() {
               key={l.href}
               href={l.href}
               aria-current={active === l.href ? "page" : undefined}
-              className={`label-mono inline-flex min-h-[44px] items-center transition-colors ${
+              className={`label-mono inline-flex min-h-[44px] cursor-pointer items-center transition-colors ${
                 active === l.href
                   ? "text-mist"
                   : "text-mist-dim hover:text-mist"
@@ -82,7 +82,7 @@ export default function Nav() {
         </div>
         <a
           href="#contact"
-          className="btn-blade inline-flex min-h-[44px] items-center rounded-full px-5 py-2 text-sm font-medium"
+          className="btn-blade inline-flex min-h-[44px] cursor-pointer items-center rounded-full px-5 py-2 text-sm font-medium"
         >
           Book a call
         </a>

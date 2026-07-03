@@ -32,7 +32,9 @@ const WORK = [
 export default function Portfolio() {
   return (
     <section id="portfolio" className="relative px-6 py-32">
-      <div className="slash-divider mx-auto max-w-7xl" />
+      <div className="slash-divider mx-auto max-w-7xl">
+        <span className="slash-sweep" data-slash-sweep />
+      </div>
       <div className="mx-auto max-w-7xl pt-24">
         <div className="mb-16 max-w-2xl">
           <p className="label-mono mb-6 reveal">// 作品 — portfolio</p>

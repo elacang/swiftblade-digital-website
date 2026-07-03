@@ -7,7 +7,9 @@ export default function Contact() {
 
   return (
     <section id="contact" className="relative px-6 py-32">
-      <div className="slash-divider mx-auto max-w-7xl" />
+      <div className="slash-divider mx-auto max-w-7xl">
+        <span className="slash-sweep" data-slash-sweep />
+      </div>
       <div className="mx-auto max-w-3xl pt-24 text-center">
         <p className="label-mono mb-6 reveal">// 連絡 — contact</p>
         <h2 className="reveal display display-lg text-mist">
@@ -23,7 +25,7 @@ export default function Contact() {
           <div className="reveal mt-12 border border-hairline bg-surface p-10">
             <p className="label-mono text-blade">// 受信確認</p>
             <p className="mt-4 text-lg text-mist">
-              Message received. We&apos;ll be in touch shortly. 🗡️
+              Message received. We&apos;ll be in touch shortly.
             </p>
           </div>
         ) : (
@@ -62,7 +64,7 @@ export default function Contact() {
             </label>
             <button
               type="submit"
-              className="btn-blade w-full py-4 font-semibold"
+              className="btn-blade w-full cursor-pointer py-4 font-semibold"
             >
               Send →
             </button>

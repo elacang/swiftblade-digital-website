@@ -104,6 +104,22 @@
     transform: skewX(-18deg);
     transform-origin: left;
   }
+  /* Katana slash sweep — animated by GSAP when divider enters viewport */
+  .slash-sweep {
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(
+      90deg,
+      transparent 5%,
+      var(--blade) 40%,
+      var(--blade-soft) 55%,
+      transparent 90%
+    );
+    height: 1px;
+    box-shadow: 0 0 12px var(--blade-glow);
+    transform: scaleX(0);
+    transform-origin: left;
+  }
   .pattern-wave {
     background-image: radial-gradient(
       circle at 50% 50%,

@@ -19,7 +19,9 @@ const PRINCIPLES = [
 export default function About() {
   return (
     <section id="about" className="relative px-6 py-32">
-      <div className="slash-divider mx-auto max-w-7xl" />
+      <div className="slash-divider mx-auto max-w-7xl">
+        <span className="slash-sweep" data-slash-sweep />
+      </div>
       <div className="mx-auto max-w-7xl pt-24">
         <div className="grid gap-16 md:grid-cols-12 md:items-start">
           {/* Asymmetric editorial split — large statement left */}
