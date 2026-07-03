@@ -4,16 +4,44 @@ import { useRef, useState } from "react";
 
 export default function Contact() {
   const [sent, setSent] = useState(false);
+  const [sending, setSending] = useState(false);
+  const [error, setError] = useState<string | null>(null);
   const honeypotRef = useRef<HTMLInputElement>(null);
 
-  const handleSubmit = (e: React.FormEvent<HTMLFormElement>) => {
+  const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
+    setError(null);
+
+    const form = e.currentTarget;
+    const data = {
+      name: (form.elements.namedItem("name") as HTMLInputElement).value,
+      email: (form.elements.namedItem("email") as HTMLInputElement).value,
+      phone: (form.elements.namedItem("phone") as HTMLInputElement).value,
+      message: (form.elements.namedItem("message") as HTMLTextAreaElement)
+        .value,
+      "company-website": honeypotRef.current?.value || "",
+    };
+
     // Honeypot: if the hidden field is filled, it's a bot — silently succeed
-    if (honeypotRef.current?.value) {
+    if (data["company-website"]) {
       setSent(true);
       return;
     }
-    setSent(true);
+
+    setSending(true);
+    try {
+      const res = await fetch("/api/contact", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify(data),
+      });
+      if (!res.ok) throw new Error("Failed to send");
+      setSent(true);
+    } catch {
+      setError("Something went wrong. Please email us directly.");
+    } finally {
+      setSending(false);
+    }
   };
 
   return (
@@ -103,11 +131,17 @@ export default function Contact() {
                 placeholder="Professional website or landing page · SEO audit · Custom software build · Test automation · Cybersecurity testing · AI workflow integration…"
               />
             </label>
+            {error && (
+              <p className="bg-background px-5 py-3 text-sm text-red-400">
+                {error}
+              </p>
+            )}
             <button
               type="submit"
-              className="btn-blade w-full cursor-pointer py-4 font-semibold"
+              disabled={sending}
+              className="btn-blade w-full cursor-pointer py-4 font-semibold disabled:cursor-wait disabled:opacity-60"
             >
-              Send →
+              {sending ? "Sending…" : "Send →"}
             </button>
           </form>
         )}
