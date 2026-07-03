@@ -54,12 +54,20 @@ export default function Contact() {
               />
             </label>
             <label className="bg-background p-5">
+              <span className="label-mono">Phone</span>
+              <input
+                type="tel"
+                className="mt-3 w-full bg-transparent text-mist outline-none placeholder:text-steel"
+                placeholder="+64 21 234 5678"
+              />
+            </label>
+            <label className="bg-background p-5">
               <span className="label-mono">What do you need sharpened?</span>
               <textarea
                 required
                 rows={4}
                 className="mt-3 w-full resize-none bg-transparent text-mist outline-none placeholder:text-steel"
-                placeholder="A consulting engagement, a SaaS trial, a greenfield build…"
+                placeholder="Professional website or landing page · SEO audit · Custom software build · Test automation · Cybersecurity testing · AI workflow integration…"
               />
             </label>
             <button

@@ -31,7 +31,7 @@ export default function Hero() {
           className="reveal mx-auto mt-10 max-w-2xl text-lg leading-relaxed text-mist-dim md:text-xl"
         >
           Swiftblade Digital forges developer tools and engineers the systems
-          behind them. We pair consulting precision with shipping speed —
+          behind them. We pair consulting precision with shipping speed,
           cutting through complexity, one blade at a time.
         </p>
 
@@ -46,7 +46,7 @@ export default function Hero() {
             href="#services"
             className="btn-ghost cursor-pointer rounded-full px-8 py-3.5 text-base font-medium"
           >
-            Start a SaaS trial →
+            View services →
           </a>
         </div>
       </div>

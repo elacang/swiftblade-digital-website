@@ -1,31 +1,18 @@
 const WORK = [
   {
     n: "01",
-    client: "Northwind Labs",
-    title: "Cut deploy failures by 78%",
-    body: "A deploy preflight pipeline that caught config drift before it hit production. Rolled out across 40+ services in six weeks.",
-    metric: "−78% failed deploys",
+    client: "AccountRight Services",
+    title: "Professional website & SEO",
+    body: "Built a responsive, professional website for a New Zealand accounting firm. Delivered fast-loading pages, clear conversion paths, and technical SEO — schema markup, semantic structure, and mobile-first performance.",
+    metric: "Live · accountsright.co.nz",
+    link: "https://accountsright.co.nz/",
   },
   {
     n: "02",
-    client: "Kestrel Finance",
-    title: "Sub-50ms settlement reporting",
-    body: "Re-architected a nightly batch into a streaming settlement layer. Reporting latency dropped from 11 minutes to under 50ms.",
-    metric: "11 min → 50ms",
-  },
-  {
-    n: "03",
-    client: "Driftwood.dev",
-    title: "Codebase onboarding in a day",
-    body: "Shipped our onboarding tooling into a 320k-LOC monorepo. New engineers shipped their first PR within one business day.",
-    metric: "1 day to first PR",
-  },
-  {
-    n: "04",
-    client: "Halberd Health",
-    title: "SOC 2 in a quarter, not a year",
-    body: "Designed the control surface and evidence pipeline that took a regulated health product from zero to SOC 2 Type II.",
-    metric: "Type II in 90 days",
+    client: "NZ Citizenship Mock Exam",
+    title: "SaaS platform — in development",
+    body: "Designing and building a SaaS practice exam platform for the New Zealand citizenship test. Includes question banks, timed mock exams, progress tracking, and a subscription model.",
+    metric: "In design & development",
   },
 ];
 
@@ -61,7 +48,18 @@ export default function Portfolio() {
                 </p>
               </div>
               <div className="md:col-span-4 md:text-right">
-                <span className="font-mono text-lg text-blade">{w.metric}</span>
+                {w.link ? (
+                  <a
+                    href={w.link}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="font-mono text-lg text-blade underline-offset-4 hover:underline"
+                  >
+                    {w.metric} ↗
+                  </a>
+                ) : (
+                  <span className="font-mono text-lg text-blade">{w.metric}</span>
+                )}
               </div>
             </article>
           ))}

@@ -7,7 +7,7 @@ const PRINCIPLES = [
   {
     kanji: "刃",
     title: "Sharp",
-    body: "Precision over polish-for-its-own-sake. Every edge we ship has a purpose; nothing is decorative.",
+    body: "Precision over polish for its own sake. Every edge we ship has a purpose; nothing is decorative.",
   },
   {
     kanji: "鍛",
@@ -35,9 +35,9 @@ export default function About() {
             <p className="reveal mt-8 max-w-xl text-lg leading-relaxed text-mist-dim">
               Swiftblade Digital began as a consulting practice for teams that
               needed to ship fast without shipping junk. Today we run a hybrid
-              model — hands-on engineering consulting alongside a growing suite
-              of developer tools built from the same discipline. The blade is
-              our operating principle: minimal, precise, and tested until it
+              model: hands-on engineering consulting alongside a growing suite
+              of developer tools built with the same discipline. The blade is
+              our operating principle — minimal, precise, and tested until it
               holds an edge.
             </p>
           </div>
