@@ -61,10 +61,14 @@ export default function Contact() {
         </p>
 
         {sent ? (
-          <div className="reveal mt-12 border border-hairline bg-surface p-10">
-            <p className="label-mono text-blade">// 受信確認</p>
+          <div className="reveal mt-12 border border-hairline bg-surface p-10 text-center">
+            <p className="label-mono text-blade">// 侍の約束 — samurai&apos;s promise</p>
             <p className="mt-4 text-lg text-mist">
-              Message received. We&apos;ll be in touch shortly.
+              Thank you for reaching out. Your message has been received, and we
+              will be in touch with you within one business day.
+            </p>
+            <p className="mt-3 text-sm text-mist-dim">
+              In the meantime, feel free to explore our work above.
             </p>
           </div>
         ) : (
