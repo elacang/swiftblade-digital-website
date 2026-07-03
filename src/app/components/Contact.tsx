@@ -1,9 +1,20 @@
 "use client";
 
-import { useState } from "react";
+import { useRef, useState } from "react";
 
 export default function Contact() {
   const [sent, setSent] = useState(false);
+  const honeypotRef = useRef<HTMLInputElement>(null);
+
+  const handleSubmit = (e: React.FormEvent<HTMLFormElement>) => {
+    e.preventDefault();
+    // Honeypot: if the hidden field is filled, it's a bot — silently succeed
+    if (honeypotRef.current?.value) {
+      setSent(true);
+      return;
+    }
+    setSent(true);
+  };
 
   return (
     <section id="contact" className="relative px-6 py-32">
@@ -31,15 +42,34 @@ export default function Contact() {
         ) : (
           <form
             className="reveal mx-auto mt-12 grid max-w-xl gap-px border border-hairline bg-hairline text-left"
-            onSubmit={(e) => {
-              e.preventDefault();
-              setSent(true);
-            }}
+            onSubmit={handleSubmit}
           >
+            {/* Honeypot — hidden from humans, bots fill it automatically */}
+            <div
+              aria-hidden="true"
+              style={{
+                position: "absolute",
+                left: "-9999px",
+                width: "1px",
+                height: "1px",
+                overflow: "hidden",
+              }}
+            >
+              <label htmlFor="company-website">Don&apos;t fill this field</label>
+              <input
+                ref={honeypotRef}
+                id="company-website"
+                type="text"
+                name="company-website"
+                tabIndex={-1}
+                autoComplete="off"
+              />
+            </div>
             <label className="bg-background p-5">
               <span className="label-mono">Name</span>
               <input
                 required
+                name="name"
                 className="mt-3 w-full bg-transparent text-mist outline-none placeholder:text-steel"
                 placeholder="Your name"
               />
@@ -49,6 +79,7 @@ export default function Contact() {
               <input
                 required
                 type="email"
+                name="email"
                 className="mt-3 w-full bg-transparent text-mist outline-none placeholder:text-steel"
                 placeholder="you@company.com"
               />
@@ -57,6 +88,7 @@ export default function Contact() {
               <span className="label-mono">Phone</span>
               <input
                 type="tel"
+                name="phone"
                 className="mt-3 w-full bg-transparent text-mist outline-none placeholder:text-steel"
                 placeholder="+64 21 234 5678"
               />
@@ -66,6 +98,7 @@ export default function Contact() {
               <textarea
                 required
                 rows={4}
+                name="message"
                 className="mt-3 w-full resize-none bg-transparent text-mist outline-none placeholder:text-steel"
                 placeholder="Professional website or landing page · SEO audit · Custom software build · Test automation · Cybersecurity testing · AI workflow integration…"
               />
