@@ -61,7 +61,7 @@ export default function Contact() {
         </p>
 
         {sent ? (
-          <div className="reveal mt-12 border border-hairline bg-surface p-10 text-center">
+          <div className="mt-12 border border-hairline bg-surface p-10 text-center">
             <p className="label-mono text-blade">// 侍の約束 — samurai&apos;s promise</p>
             <p className="mt-4 text-lg text-mist">
               Thank you for reaching out. Your message has been received, and we
