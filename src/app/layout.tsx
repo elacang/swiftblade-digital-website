@@ -31,6 +31,9 @@ export default function RootLayout({
       className={`${geistSans.variable} ${geistMono.variable} h-full antialiased`}
     >
       <body className="grain min-h-full flex flex-col bg-background text-mist">
+        <noscript>
+          <style>{`.reveal{opacity:1!important;transform:none!important}[data-hero-line]{clip-path:none!important}`}</style>
+        </noscript>
         {children}
       </body>
     </html>

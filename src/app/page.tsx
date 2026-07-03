@@ -5,12 +5,12 @@ import Services from "./components/Services";
 import Portfolio from "./components/Portfolio";
 import Contact from "./components/Contact";
 import Footer from "./components/Footer";
-import Motion from "./components/Motion";
+import MotionClient from "./components/MotionClient";
 
 export default function Home() {
   return (
     <>
-      <Motion />
+      <MotionClient />
       <Nav />
       <main className="flex-1">
         <Hero />
